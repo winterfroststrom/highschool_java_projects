@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : Player.xml
+    Created on : November 22, 2009, 6:28 PM
+    Author     : Scalene
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE player SYSTEM "Player.dtd">
+<player>
+    <city>
+        <inner>1</inner>
+        <outer>1</outer>
+        <frontier>1</frontier>
+    </city>
+    <cardTotal>3</cardTotal>
+    <deck>
+        <card><cardid>1</cardid><cardnum>1</cardnum></card>
+        <card><cardid>2</cardid><cardnum>1</cardnum></card>
+        <card><cardid>3</cardid><cardnum>1</cardnum></card>
+    </deck>
+</player>

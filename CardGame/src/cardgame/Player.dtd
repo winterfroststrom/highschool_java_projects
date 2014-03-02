@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/Player.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE player SYSTEM "Player.dtd">
+
+    <player>
+    ...
+    </player>
+-->
+
+<!ELEMENT player (city,cardTotal,deck)>
+    <!ELEMENT city (inner,outer,frontier)>
+        <!ELEMENT inner (#PCDATA)>
+        <!ELEMENT outer (#PCDATA)>
+        <!ELEMENT frontier (#PCDATA)>
+    <!ELEMENT cardTotal (#PCDATA)>
+    <!ELEMENT deck (card*)>
+        <!ELEMENT card (cardid,cardnum)>
+            <!ELEMENT cardid (#PCDATA)>
+            <!ELEMENT cardnum (#PCDATA)>

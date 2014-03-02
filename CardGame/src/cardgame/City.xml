@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : City.xml
+    Created on : November 22, 2009, 10:35 PM
+    Author     : Scalene
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE cities[
+    <!ELEMENT cities (city*)>
+        <!ELEMENT city (basic,resource,field,passive,active)><!ATTLIST city id CDATA #REQUIRED place CDATA #REQUIRED>
+            <!ELEMENT basic (name,health,theme)>
+                <!ELEMENT name (#PCDATA)>
+                <!ELEMENT health (#PCDATA)>
+                <!ELEMENT theme (#PCDATA)>
+            <!ELEMENT field (#PCDATA)>
+
+
+            
+            <!ELEMENT resource (#PCDATA)>
+            <!ELEMENT passive (#PCDATA)>
+            <!ELEMENT active (#PCDATA)>
+]>
+
+<cities>
+    <city id="0001" place="inner">
+        <basic>
+            <name>Palace Of The Empire</name>
+            <health>20</health>
+            <theme>EMPIRE</theme>
+        </basic>
+        <field>5</field>
+        <resource>a</resource>
+        <passive>a</passive>
+        <active>a</active>
+    </city>
+</cities>

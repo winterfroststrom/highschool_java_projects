@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : Card.xml
+    Created on : November 1, 2009, 2:14 PM
+    Author     : Scalene
+    Description:
+        Purpose of the document follows.
+-->
+
+<!DOCTYPE card [
+    <!ELEMENT card (action|unit|resource)*>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT cost (#PCDATA)>
+    <!ELEMENT theme (#PCDATA)>
+    <!ELEMENT target1 (#PCDATA)>
+    <!ELEMENT target2 (#PCDATA)>
+    <!ELEMENT health (#PCDATA)>
+    <!ELEMENT attack (#PCDATA)>
+        <!ELEMENT action (name,cost,theme,effect)><!ATTLIST action id CDATA #REQUIRED>
+            <!ELEMENT effect (target1,target2,change)*>
+        <!ELEMENT unit (name,stats,ability*)><!ATTLIST unit id CDATA #REQUIRED>
+            <!ELEMENT stats (health,attack,cost,theme)>
+            <!ELEMENT ability (name,target1,target2,counter,change)>
+                <!ELEMENT counter (time,countereffect)>
+                    <!ELEMENT time (#PCDATA)>
+                    <!ELEMENT countereffect (#PCDATA)>
+        <!ELEMENT resource (name,resourceAmount)><!ATTLIST resource id CDATA #REQUIRED>
+            <!ELEMENT resourceAmount (#PCDATA)>
+    <!ELEMENT change (meta,(stat)*)>
+        <!ELEMENT meta (#PCDATA)>
+        <!ELEMENT stat (attack|health)*>
+] >
+
+<card>
+    <unit id = "0001" >
+        <name>Vanguard Soldier</name>
+        <stats><health>3</health><attack>1</attack><cost>2-0-0-0</cost><theme>EMPIRE</theme></stats>
+    </unit>
+    <unit id = "0002" >
+        <name>Rearguard Soldier</name>
+        <stats><health>10</health><attack>1</attack><cost>3-0-0-0</cost><theme>EMPIRE</theme></stats>
+    </unit>
+    <unit id = "0003" >
+        <name>Knight</name>
+        <stats><health>16</health><attack>5</attack><cost>7-0-0-0</cost><theme>EMPIRE</theme></stats>
+    </unit>
+    <unit id = "0004" >
+        <name>Archer</name>
+        <stats><health>5</health><attack>2</attack><cost>3-0-0-0</cost><theme>EMPIRE</theme></stats>
+    </unit>
+    <unit id = "0005" >
+        <name>Lancer</name>
+        <stats><health>1</health><attack>7</attack><cost>4-0-0-0</cost><theme>EMPIRE</theme></stats>
+        <ability><name>suicide</name><target1>self</target1><target2>self</target2>
+            <counter><time>0</time><countereffect>death</countereffect></counter>
+            <change>
+                <meta>statm</meta>
+                <stat><attack>2</attack></stat>
+            </change>
+        </ability>
+    </unit>
+    <action id="0006">
+        <name>Blitzkreig</name><cost>2-0-0-0</cost><theme>EMPIRE</theme>
+        <effect><target1>self</target1><target2>units</target2>
+            <change><meta>stata</meta>
+                <stat><attack>2</attack></stat>
+            </change>
+        </effect>
+    </action>
+    <resource id="0007">
+        <name>People Sector</name><resourceAmount>1-0-0-0</resourceAmount>
+    </resource>
+    <resource id="0008">
+        <name>Research Sector</name><resourceAmount>0-1-0-0</resourceAmount>
+    </resource>
+    <resource id="0009">
+        <name>Industry Sector</name><resourceAmount>0-0-1-0</resourceAmount>
+    </resource>
+    <resource id="0010">
+        <name>Goverment Sector</name><resourceAmount>0-0-0-1</resourceAmount>
+    </resource>
+</card>

@@ -1,0 +1,12 @@
+build.xml
+*.exe
+*.policy
+*.mf
+*.zip
+*.jar
+
+*/build/
+*/dist/
+*/dist2/
+*/nbproject/
+
